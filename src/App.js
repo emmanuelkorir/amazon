@@ -6,31 +6,18 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import Checkout from './Checkout';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route
-          path="/checkout"
-          element={
-            <div className="app">
-              {/* //BEM naming convention */}
-              <Header />
-              <h1>I am a checkout</h1>
-            </div>
-          }
-        ></Route>
-        <Route
-          path="/"
-          element={
-            <div className="app">
-              <Header />
-              <Home />
-            </div>
-          }
-        ></Route>
-      </Routes>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/checkout" element={<Checkout />}></Route>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      </div>
     </Router>
   );
 }
